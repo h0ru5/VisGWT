@@ -1,16 +1,15 @@
 package de.johanneshund.gwt.vis.client.ui;
 
 import com.google.gwt.core.client.GWT;
+import com.google.gwt.dom.client.DivElement;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.HTML;
-import com.google.gwt.user.client.ui.HTMLPanel;
 import com.google.gwt.user.client.ui.HasText;
 import com.google.gwt.user.client.ui.Widget;
 
 public class Graph extends Composite implements HasText {
-
 
 	private String src;
 	private static GraphUiBinder uiBinder = GWT.create(GraphUiBinder.class);
@@ -27,7 +26,7 @@ public class Graph extends Composite implements HasText {
 		setText(txtGraph);
 	}
 
-	@UiField HTMLPanel target;
+	@UiField DivElement target;
 
 	@Override
 	public String getText() {
@@ -37,7 +36,11 @@ public class Graph extends Composite implements HasText {
 	@Override
 	public void setText(String text) {
 		src=text;
-		target.add(new HTML(doVis(text)));
+		update();
+	}
+
+	private void update() {
+		target.setInnerHTML(doVis(src));
 	}
 
 	private native String doVis(String graph) /*-{ return $wnd.Viz(graph,"svg") }-*/;
