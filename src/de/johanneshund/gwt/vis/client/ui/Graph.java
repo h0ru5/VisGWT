@@ -18,11 +18,13 @@ import com.google.gwt.user.client.ui.Widget;
  */
 public class Graph extends Composite implements HasText {
 
+	private String format = "svg";
 	private String src;
 	private static GraphUiBinder uiBinder = GWT.create(GraphUiBinder.class);
 
 	@UiField
 	DivElement target;
+	
 
 	interface GraphUiBinder extends UiBinder<Widget, Graph> {
 	}
@@ -36,11 +38,6 @@ public class Graph extends Composite implements HasText {
 		setText(txtGraph);
 	}
 
-	@Override
-	public String getText() {
-		return src;
-	}
-
 	/** uses viz.js to render a svg-plot based on the passed graphviz-source 
 	 * @see com.google.gwt.user.client.ui.HasText#setText(java.lang.String)
 	 * @see https://github.com/mdaines/viz.js
@@ -52,11 +49,24 @@ public class Graph extends Composite implements HasText {
 	}
 
 	private void update() {
-		target.setInnerHTML(doVis(src));
+		target.setInnerHTML(doVis(src,format));
 	}
 
-	private native String doVis(String graph) /*-{
-		return $wnd.Viz(graph, "svg")
+	private native String doVis(String graph, String format) /*-{
+		return $wnd.Viz(graph, format)
 	}-*/;
+
+	@Override
+	public String getText() {
+		return src;
+	}
+
+	public String getFormat() {
+		return format;
+	}
+
+	public void setFormat(String format) {
+		this.format = format;
+	}
 
 }
