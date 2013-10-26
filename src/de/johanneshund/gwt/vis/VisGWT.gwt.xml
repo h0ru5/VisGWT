@@ -8,9 +8,7 @@
 <module rename-to='visgwt'>
   <!-- Inherit the core Web Toolkit stuff.                        -->
   <inherits name='com.google.gwt.user.User'/>
-  <entry-point class='de.johanneshund.gwt.vis.client.VisGWTExample'/>
-
+    
   <source path='client'/>
   <script src="viz.js"></script>
-
 </module>
