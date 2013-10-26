@@ -44,7 +44,7 @@ public class VisGWTExample implements EntryPoint {
 	@Override
 	public void onModuleLoad() {
 		g = new Graph();
-		RootPanel panel = RootPanel.get("contents");
+		RootPanel panel = RootPanel.get();
 		panel.add(g);
 		g.setText(sampleGraph);
 		panel.add(new HTML("<pre>" + sampleGraph + "</pre>"));
