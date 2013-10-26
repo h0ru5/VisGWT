@@ -5,14 +5,24 @@ import com.google.gwt.dom.client.DivElement;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.Composite;
-import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.HasText;
 import com.google.gwt.user.client.ui.Widget;
 
+/**
+ * A GWT Component for UI Binder using die Viz.js library
+ * 
+ * Just set the dot source via setText
+ * 
+ * @author Johannes Hund <johannes.hund@gmail.com>
+ *
+ */
 public class Graph extends Composite implements HasText {
 
 	private String src;
 	private static GraphUiBinder uiBinder = GWT.create(GraphUiBinder.class);
+
+	@UiField
+	DivElement target;
 
 	interface GraphUiBinder extends UiBinder<Widget, Graph> {
 	}
@@ -26,16 +36,18 @@ public class Graph extends Composite implements HasText {
 		setText(txtGraph);
 	}
 
-	@UiField DivElement target;
-
 	@Override
 	public String getText() {
 		return src;
 	}
 
+	/** uses viz.js to render a svg-plot based on the passed graphviz-source 
+	 * @see com.google.gwt.user.client.ui.HasText#setText(java.lang.String)
+	 * @see https://github.com/mdaines/viz.js
+	 */
 	@Override
 	public void setText(String text) {
-		src=text;
+		src = text;
 		update();
 	}
 
@@ -43,7 +55,8 @@ public class Graph extends Composite implements HasText {
 		target.setInnerHTML(doVis(src));
 	}
 
-	private native String doVis(String graph) /*-{ return $wnd.Viz(graph,"svg") }-*/;
-	
+	private native String doVis(String graph) /*-{
+		return $wnd.Viz(graph, "svg")
+	}-*/;
 
 }
