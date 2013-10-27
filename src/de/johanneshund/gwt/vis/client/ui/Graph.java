@@ -49,7 +49,11 @@ public class Graph extends Composite implements HasText {
 	}
 
 	private void update() {
-		target.setInnerHTML(doVis(src,format));
+		if(src==null || src.isEmpty()) {
+			target.setInnerHTML("");
+		} else {
+			target.setInnerHTML(doVis(src,format));
+		}
 	}
 
 	private native String doVis(String graph, String format) /*-{
