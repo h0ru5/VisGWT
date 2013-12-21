@@ -29,10 +29,17 @@ public class Graph extends Composite implements HasText {
 	interface GraphUiBinder extends UiBinder<Widget, Graph> {
 	}
 
+	/**
+	 * Constructor for an empty Graph 
+	*/
 	public Graph() {
 		initWidget(uiBinder.createAndBindUi(this));
 	}
 
+	/**
+	 * Constructor for Graph setting a dot source
+	 * @param txtGraph String graph to be displayed, as String of dot source
+	 */
 	public Graph(String txtGraph) {
 		initWidget(uiBinder.createAndBindUi(this));
 		setText(txtGraph);
@@ -49,6 +56,9 @@ public class Graph extends Composite implements HasText {
 	}
 
 	private void update() {
+		if(format==null || format.isEmpty())
+			format="svg";
+		
 		if(src==null || src.isEmpty()) {
 			target.setInnerHTML("");
 		} else {
@@ -60,17 +70,31 @@ public class Graph extends Composite implements HasText {
 		return $wnd.Viz(graph, format)
 	}-*/;
 
+	/**
+	 * Method getText returns the dot source currently displayed as graph
+	 * @return String
+	 * @see com.google.gwt.user.client.ui.HasText#getText()
+	 */
 	@Override
 	public String getText() {
 		return src;
 	}
 
+	/**
+	 * Method getFormat, returns the format passed to viz.js, defaults to svg
+	 * @return String
+	 */
 	public String getFormat() {
 		return format;
 	}
 
+	/**
+	 * Method setFormat, sts the format to be passed to viz.js
+	 * @param format String
+	 */
 	public void setFormat(String format) {
 		this.format = format;
+		update();
 	}
 
 }
