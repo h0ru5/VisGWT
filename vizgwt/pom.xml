@@ -8,6 +8,13 @@
 	<description>wrapper of gwt around viz.js</description>
 	<packaging>jar</packaging>
 
+
+	<parent>
+		<groupId>com.github.h0ru5.gwt</groupId>
+		<artifactId>vizgwt-parent</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+
 	<properties>
 		<!-- Convenience property to set the GWT version -->
 		<gwtVersion>2.6.0-rc3</gwtVersion>
@@ -78,7 +85,8 @@
 		</plugins>
 		<pluginManagement>
 			<plugins>
-				<!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself.-->
+				<!--This plugin's configuration is used to store Eclipse m2e settings 
+					only. It has no influence on the Maven build itself. -->
 				<plugin>
 					<groupId>org.eclipse.m2e</groupId>
 					<artifactId>lifecycle-mapping</artifactId>

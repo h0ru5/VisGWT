@@ -33,4 +33,13 @@
   </licenses>
   
   
+  <scm>
+  	<url>https://github.com/h0ru5/VisGWT.git</url>
+  	<developerConnection>scm:git:https://github.com/h0ru5/VisGWT.git</developerConnection>
+  	<connection>scm:git:https://github.com/h0ru5/VisGWT.git</connection>
+  </scm>
+  <issueManagement>
+  	<system>GitHub</system>
+  	<url>https://github.com/h0ru5/VisGWT/issues</url>
+  </issueManagement>
 </project>
