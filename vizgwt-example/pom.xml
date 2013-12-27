@@ -3,7 +3,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.github.horu5.gwt</groupId>
+	<groupId>com.github.h0ru5.gwt</groupId>
 	<artifactId>vizgwt-sample</artifactId>
 	<packaging>war</packaging>
 	<version>0.0.3-SNAPSHOT</version>
@@ -37,7 +37,7 @@
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
-			<groupId>com.github.horu5.gwt</groupId>
+			<groupId>com.github.h0ru5.gwt</groupId>
 			<artifactId>vizgwt</artifactId>
 			<version>0.0.2-SNAPSHOT</version>
 		</dependency>
@@ -88,15 +88,6 @@
 				</executions>
 				<configuration>
 					<webappDirectory>${webappDirectory}</webappDirectory>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>2.3.2</version>
-				<configuration>
-					<source>1.6</source>
-					<target>1.6</target>
 				</configuration>
 			</plugin>
 		</plugins>
