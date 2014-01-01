@@ -3,10 +3,8 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.github.h0ru5.gwt</groupId>
 	<artifactId>vizgwt-sample</artifactId>
 	<packaging>war</packaging>
-	<version>0.0.3-SNAPSHOT</version>
 	<name>Gwt - Viz Example</name>
 
 	<parent>
