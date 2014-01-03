@@ -8,7 +8,8 @@
 <module>
   <!-- Inherit the core Web Toolkit stuff.                        -->
   <inherits name='com.google.gwt.user.User'/>
-    
+ <inherits name="com.google.gwt.resources.Resources" />
+
   <source path='client'/>
-  <script src="viz.js"></script>
+  <entry-point class="com.github.h0ru5.gwt.viz.client.VizGwt"/>
 </module>

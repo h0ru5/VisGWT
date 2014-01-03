@@ -1,5 +1,6 @@
 package com.github.h0ru5.gwt.viz.client.ui;
 
+import com.github.h0ru5.gwt.viz.client.ui.resources.VizResources;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.dom.client.DivElement;
 import com.google.gwt.uibinder.client.UiBinder;
