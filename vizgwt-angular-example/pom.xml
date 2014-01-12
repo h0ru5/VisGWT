@@ -7,10 +7,9 @@
 		<version>1.1-alpha-SNAPSHOT</version>
 		<relativePath>..</relativePath>
 	</parent>
-	<artifactId>vizgwt-angular-module</artifactId>
-	<name>Angular.js module for viz.js</name>
-	<description>using AngularGwt</description>
-
+	<artifactId>vizgwt-angular-example</artifactId>
+	<packaging>war</packaging>
+	<name>Example for vizgwt angular directive </name>
 	<build>
 		<!-- Generate compiled stuff in the folder used for developing mode -->
 		<outputDirectory>${webappDirectory}/WEB-INF/classes</outputDirectory>
@@ -31,8 +30,13 @@
 					</execution>
 				</executions>
 				<configuration>
-				<genParam>true</genParam>
+					<genParam>true</genParam>
 				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.eclipse.jetty</groupId>
+				<artifactId>jetty-maven-plugin</artifactId>
+				<version>9.1.0.v20131115</version>
 			</plugin>
 		</plugins>
 		<pluginManagement>
@@ -71,8 +75,7 @@
 			</plugins>
 		</pluginManagement>
 	</build>
-
-	<dependencies>
+<dependencies>
 		<dependency>
 			<groupId>com.github.h0ru5.gwt</groupId>
 			<artifactId>angulargwt</artifactId>
@@ -86,9 +89,12 @@
 		</dependency>
 		<dependency>
 			<groupId>com.github.h0ru5.gwt</groupId>
-			<artifactId>vizgwt</artifactId>
+			<artifactId>vizgwt-angular-module</artifactId>
 			<version>1.1-alpha-SNAPSHOT</version>
 		</dependency>
-	</dependencies>
+</dependencies>
 
+	<properties>
+		<gwtVersion>2.6.0-rc3</gwtVersion>
+	</properties>
 </project>

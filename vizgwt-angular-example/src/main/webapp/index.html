@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta charset='utf-8' />
+	<title>VizGWT example using Angular.GWT</title>
+	<script src="VizGwtAngularExample/VizGwtAngularExample.nocache.js"></script>
+</head>
+<body>
+
+<section ng-controller="VizExampleCtrl">
+<header>
+<h1>VizGwtAngularExample</h1>
+</header>
+<section>
+<h3>Graph:</h3>
+<div graph-viz></div>
+<pre ng-bind="graphSource"></pre>
+</section>
+<section>
+<p>Code</p>
+<p><input type="checkbox" ng-model="otherActive">Active</p>
+<textarea rows=10" cols="80" ng-model="otherSource">
+</textarea>
+</section>
+<footer>
+<h3>Example</h3>
+<pre>{{example}}</pre>
+</footer>
+</section>
+
+</body>
+</html>

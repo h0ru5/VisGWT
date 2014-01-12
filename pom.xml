@@ -19,6 +19,7 @@
 		<module>vizgwt</module>
 		<module>vizgwt-example</module>
 		<module>vizgwt-angular-module</module>
+		<module>vizgwt-angular-example</module>
 	</modules>
 
 	<properties>
