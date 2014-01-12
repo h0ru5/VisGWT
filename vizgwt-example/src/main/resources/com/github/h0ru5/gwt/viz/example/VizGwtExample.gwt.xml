@@ -14,7 +14,7 @@
  <inherits name="com.github.h0ru5.gwt.viz.VizGwt" />
  
   <!-- Specify the app entry point class.                         -->
-  <entry-point class='com.github.horu5.gwt.viz.example.client.VizGwtExample' />
+  <entry-point class='com.github.h0ru5.gwt.viz.example.client.VizGwtExample' />
 
   <!-- Specify the paths for translatable code                    -->
   <source path='client' />

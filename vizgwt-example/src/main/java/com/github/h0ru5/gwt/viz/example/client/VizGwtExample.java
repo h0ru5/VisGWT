@@ -1,4 +1,4 @@
-package com.github.horu5.gwt.viz.example.client;
+package com.github.h0ru5.gwt.viz.example.client;
 
 
 import com.github.h0ru5.gwt.viz.client.ui.Graph;
