@@ -12,13 +12,7 @@
 		<version>1.1-alpha-SNAPSHOT</version>
 	</parent>
 
-	<properties>
-		<!-- Convenience property to set the GWT version -->
-		<gwtVersion>2.6.0-rc3</gwtVersion>
-		<!-- GWT needs at least java 1.5 -->
-		<webappDirectory>${project.build.directory}/${project.build.finalName}</webappDirectory>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-	</properties>
+	
 	<dependencies>
 		<dependency>
 			<groupId>com.google.gwt</groupId>
