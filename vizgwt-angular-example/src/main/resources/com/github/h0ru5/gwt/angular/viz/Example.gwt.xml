@@ -21,7 +21,9 @@
   <!-- Specify the paths for translatable code                    -->
   <source path='client' />
 
-<!-- Super-dev Mode -->
- <set-configuration-property name='xsiframe.failIfScriptTag' value='FALSE'/>
-
+	<!-- SuperDev -->
+	<add-linker name="xsiframe" />
+	<set-configuration-property name='xsiframe.failIfScriptTag' value='FALSE'/>
+	<set-configuration-property name="devModeRedirectEnabled"	value="true" />
+	<set-property name="compiler.useSourceMaps" value="true" />
 </module>

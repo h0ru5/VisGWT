@@ -35,13 +35,12 @@ public class VizExampleController extends AngularController<VizExampleScope>{
 			"	end [shape=Msquare];\r\n" + 
 			"}";
 	
-	private String initialOther = "state1 -> state2 \n state2 -> state3 \n state3->state1";
+	private String initialOther = "digraph Example { \r\n state1 -> state2; \r\n state2 -> state3; \r\n state3 -> state1; }";
 	
 	public void onInit(VizExampleScope scope) {
 		scope.example(sampleGraph);
 		scope.otherSource(initialOther);
-		scope.otherActive(false);
-		this.scope=scope;
+		scope.otherActive(true);
 	}
 	
 	@NgWatch("otherActive")
