@@ -31,6 +31,7 @@
 				</executions>
 				<configuration>
 					<genParam>true</genParam>
+					<gen>${project.build.directory}/gwt/gen</gen>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -79,8 +80,7 @@
 		<dependency>
 			<groupId>com.github.h0ru5.gwt</groupId>
 			<artifactId>angulargwt</artifactId>
-			<version>1.1.1</version>
-			<type>jar</type>
+			<version>1.1.2-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>com.google.gwt</groupId>
