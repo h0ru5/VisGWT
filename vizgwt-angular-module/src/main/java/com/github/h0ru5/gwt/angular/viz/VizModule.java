@@ -5,7 +5,7 @@ import com.google.gwt.angular.client.NgDepends;
 import com.google.gwt.angular.client.NgName;
 
 @NgName("viz")
-@NgDepends({VizDirective.class})
+@NgDepends({VizDirective.class,DotService.class})
 public class VizModule implements AngularModule {
 
 }

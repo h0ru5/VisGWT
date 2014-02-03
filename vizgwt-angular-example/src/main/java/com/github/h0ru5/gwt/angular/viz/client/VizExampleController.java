@@ -1,8 +1,13 @@
 package com.github.h0ru5.gwt.angular.viz.client;
 
+import com.github.h0ru5.gwt.angular.viz.DotService;
+import com.github.h0ru5.gwt.angular.viz.GraphEdge;
 import com.google.gwt.angular.client.AngularController;
 import com.google.gwt.angular.client.NgInject;
 import com.google.gwt.angular.client.NgWatch;
+
+import elemental.client.Browser;
+import elemental.util.ArrayOf;
 
 @NgInject(name="VizExampleCtrl")
 public class VizExampleController extends AngularController<VizExampleScope>{
@@ -36,10 +41,26 @@ public class VizExampleController extends AngularController<VizExampleScope>{
 			"}";
 	
 	private String initialOther = "digraph Example { \r\n state1 -> state2; \r\n state2 -> state3; \r\n state3 -> state1; }";
+
+	private DotService dot;
 	
-	public void onInit(VizExampleScope scope) {
+	public void onInit(VizExampleScope scope, DotService dot) {	
+		this.dot=dot;
+		ArrayOf<GraphEdge> edges = dot.newEdgeArray();
+		
+		GraphEdge trans1 = dot.newEdge().start("red").end("redyellow");
+		Browser.getWindow().getConsole().log("created trans1");
+		edges.push(trans1);
+		Browser.getWindow().getConsole().log("added trans1");
+		
+		edges.push(dot.newEdge().start("redyellow").end("green"));
+		edges.push(dot.newEdge().start("green").end("yellow"));
+		edges.push(dot.newEdge().start("yellow").end("red"));
+		
+		Browser.getWindow().getConsole().log("getting code");
+		String code = dot.getCode(edges,dot.newNodeArray());
+		scope.otherSource(code);
 		scope.example(sampleGraph);
-		scope.otherSource(initialOther);
 		scope.otherActive(true);
 	}
 	
