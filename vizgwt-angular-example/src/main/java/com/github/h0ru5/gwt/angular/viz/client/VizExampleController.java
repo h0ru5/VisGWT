@@ -4,6 +4,7 @@ import com.github.h0ru5.gwt.angular.viz.DotService;
 import com.github.h0ru5.gwt.angular.viz.GraphEdge;
 import com.google.gwt.angular.client.AngularController;
 import com.google.gwt.angular.client.NgInject;
+import com.google.gwt.angular.client.NgInjected;
 import com.google.gwt.angular.client.NgWatch;
 
 import elemental.client.Browser;
@@ -39,13 +40,12 @@ public class VizExampleController extends AngularController<VizExampleScope>{
 			"	start [shape=Mdiamond];\r\n" + 
 			"	end [shape=Msquare];\r\n" + 
 			"}";
-	
-	private String initialOther = "digraph Example { \r\n state1 -> state2; \r\n state2 -> state3; \r\n state3 -> state1; }";
 
-	private DotService dot;
+	@NgInjected
+	public DotService dot;
 	
-	public void onInit(VizExampleScope scope, DotService dot) {	
-		this.dot=dot;
+	@Override
+	public void initialize(VizExampleScope scope) {	
 		ArrayOf<GraphEdge> edges = dot.newEdgeArray();
 		
 		GraphEdge trans1 = dot.newEdge().start("red").end("redyellow");
@@ -60,6 +60,7 @@ public class VizExampleController extends AngularController<VizExampleScope>{
 		Browser.getWindow().getConsole().log("getting code");
 		String code = dot.getCode(edges,dot.newNodeArray());
 		scope.otherSource(code);
+
 		scope.example(sampleGraph);
 		scope.otherActive(true);
 	}
