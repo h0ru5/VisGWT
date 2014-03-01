@@ -6,24 +6,18 @@ import com.google.gwt.angular.client.NgDirective;
 import com.google.gwt.angular.client.NgElement;
 import com.google.gwt.angular.client.Scope;
 import com.google.gwt.angular.client.WatchFunction;
-import com.google.gwt.core.client.JavaScriptObject;
 
-import elemental.dom.Element;
 import elemental.dom.Node;
-
-import com.google.gwt.user.client.ui.HTMLPanel;
-
 import elemental.json.JsonObject;
 import elemental.util.ArrayOf;
 
+@NgDirective("graphViz")
 public class VizDirective implements Directive {
 
 	private static final String GRAPH_SOURCE = "graphSource";
-
-	@NgDirective("graphViz")
-	public void graph(final Scope scope, final ArrayOf<NgElement> element,
-			final JsonObject attrs) {
-
+	
+	@Override
+	public void link(Scope scope, ArrayOf<NgElement> element, JsonObject attrs) {
 		//create Graph 
 		final Graph myGraph = new Graph();
 
@@ -45,5 +39,11 @@ public class VizDirective implements Directive {
 				myGraph.setText(value);
 			}
 		});
+		
+	}
+
+
+	@Override
+	public void init() {
 	}
 }
